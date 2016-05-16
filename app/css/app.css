@@ -1,29 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Bitter:400,700);
-body {
-  background-color: #0076A3;
-  margin: 0;
-  padding: 0;
-  font-size: 1.4rem;
-  color: #000000;
-  font-family: "Open Sans", sans-serif; }
-
-h1, h2, h3, h4, h5, h6 {
-  color: #FFBA00;
-  font-family: "Bitter", serif; }
-
-.container {
-  margin: 0 auto; }
-  @media only screen and (min-width: 768px) {
-    .container {
-      width: 90%; } }
-  @media only screen and (min-width: 1024px) {
-    .container {
-      width: 1000px; } }
-
 /*para limpiar cuando hacemos un float left y rigth*/
+/* galeria */
 .navegacion {
   padding: 10px;
-  background-color: #101068; }
+  background-color: #005170; }
   .navegacion:after {
     content: "";
     display: table;
@@ -70,7 +50,6 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: 700; }
 
 .london {
-  background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen02.jpg");
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen02.jpg");
   background-repeat: no-repeat;
   background-position: top center;
@@ -78,12 +57,126 @@ h1, h2, h3, h4, h5, h6 {
   height: 600px; }
 
 .estacion {
-  background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen03.jpg");
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen03.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   height: 200px; }
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  border-collapse: collapse; }
+  table > caption {
+    text-align: left;
+    font-family: "Bitter", serif;
+    font-size: 1.8rem;
+    padding: 5px;
+    color: #FFBA00;
+    margin-bottom: 20px; }
+  table thead tr th {
+    background-color: #002c3d;
+    color: #EEE8D6;
+    font-size: 1.0rem; }
+  table > thead > tr,
+  table > tbody > tr {
+    color: #EEE8D6;
+    background-color: #005170; }
+    table > thead > tr:nth-child(odd),
+    table > tbody > tr:nth-child(odd) {
+      background-color: #0076A3; }
+    table > thead > tr:hover,
+    table > tbody > tr:hover {
+      background-color: #e6a700; }
+    table > thead > tr th, table > thead > tr td,
+    table > tbody > tr th,
+    table > tbody > tr td {
+      padding: 10px;
+      border-bottom: 1px dotted #101068; }
+
+.galeria:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.galeria li.imagen {
+  float: left;
+  list-style: none;
+  width: 24.25%; }
+  .galeria li.imagen:nth-child(n) {
+    margin-right: 1%;
+    margin-bottom: 1%; }
+  .galeria li.imagen:nth-child(4n + 1) {
+    margin-right: 0;
+    margin-bottom: 0; }
+  .galeria li.imagen img {
+    display: block;
+    max-width: 100%;
+    border-radius: 10px; }
+
+.btn {
+  border-radius: 5px;
+  display: block;
+  background-color: #da120d;
+  color: #EEE8D6;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  font-size: 1rem;
+  transition: all .3s ease; }
+  @media only screen and (min-width: 768px) {
+    .btn {
+      display: inline-block; } }
+  .btn:hover {
+    background-color: #020210; }
+
+/* podemos etender la clase y sobreescribir solo lo necesario para eso utilizamos extend */
+/*
+ .btn-verde {
+ 	@extend .btn;
+ 	background-color: $verde;
+ }
+*/
+.noticia {
+  padding-top: 10px;
+  margin-bottom: 30px;
+  border-top: 2px dotted #EEE8D6; }
+  .noticia h3 {
+    color: #ffc833;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .noticia img {
+    float: left;
+    margin-right: 10px; }
+  .noticia p {
+    font-size: 1rem;
+    color: #EEE8D6;
+    text-align: justify; }
+
+body {
+  background-color: #0076A3;
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  color: #000000;
+  font-family: "Open Sans", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FFBA00;
+  font-family: "Bitter", serif; }
+
+.container {
+  margin: 0 auto; }
+  @media only screen and (min-width: 768px) {
+    .container {
+      width: 90%; } }
+  @media only screen and (min-width: 1024px) {
+    .container {
+      width: 1000px; } }
 
 #contenido-principal {
   /*cuando se pode un box-sizing con border-box, el padding de 40 no cambia*/
@@ -98,33 +191,3 @@ h1, h2, h3, h4, h5, h6 {
   aside {
     width: 33.3%;
     float: right; } }
-
-/* noticias */
-.noticia {
-  padding-top: 10px;
-  margin-bottom: 30px;
-  border-top: 2px dotted #EEE8D6; }
-  .noticia h3 {
-    color: #EEE8D6;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-    text-transform: uppercase; }
-  .noticia img {
-    float: left;
-    margin-right: 10px; }
-  .noticia p {
-    font-size: 1rem;
-    color: #EEE8D6;
-    text-align: justify; }
-
-.btn {
-  display: block;
-  background-color: #f22d28;
-  color: #EEE8D6;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 5px 10px; }
-  @media only screen and (min-width: 768px) {
-    .btn {
-      display: inline-block; } }

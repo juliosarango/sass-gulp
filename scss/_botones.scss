@@ -1,0 +1,29 @@
+.btn {
+
+	@include border-radius(5px);
+	display: block;
+	@include tablet {
+		display: inline-block;
+	}
+
+	background-color: darken($fondo-boton,10);
+	color: $texto-boton;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;;
+	padding: 5px 10px;
+	font-size: 1rem;
+	transition: all .3s ease;
+
+	&:hover {
+		background-color: darken($azulObscuro,20);
+	}
+}
+
+/* podemos etender la clase y sobreescribir solo lo necesario para eso utilizamos extend */
+/*
+ .btn-verde {
+ 	@extend .btn;
+ 	background-color: $verde;
+ }
+*/
